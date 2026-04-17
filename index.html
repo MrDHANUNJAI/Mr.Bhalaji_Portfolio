@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mr.KESHAVA BHALAJI L-Portfolio</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- External libs (deferred) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  <div class="cursor-dot"></div>
+<div class="cursor-outline"></div>
+  <!-- Particle background -->
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+
+  <div id="app">
+    <!-- ========== YOUR ORIGINAL WELCOME (UNCHANGED) ========== -->
+   <section id="welcome" class="page page--welcome">
+  <div class="deck-wrapper">
+
+    <!-- Left Info Block -->
+    <div class="deck left-deck info-block">
+      <p>⚡ Electrical & Electronics Engineering</p>
+      <p>🔋 EV Systems & Battery Tech</p>
+      <p>🤖 Embedded Systems (Arduino, ESP32)</p>
+    </div>
+
+    <!-- Center Welcome -->
+    <div class="welcome-inner">
+      <h1 class="welcome-title">
+        Hi, I'm<br>
+        <span class="name-glow">L. Kesava Balaji ⚡</span>
+      </h1>
+
+      <!-- 🔥 Typing Text -->
+      <p class="welcome-sub typing-welcome"></p>
+
+      <button id="btnExplore" class="btn btn--lg neon-btn">
+        Explore ↓
+      </button>
+    </div>
+
+    <!-- Right Info Block -->
+    <div class="deck right-deck info-block">
+      <p>🌐 IoT Systems & Automation</p>
+      <p>⚙️ Power Electronics</p>
+      <p>🚀 Real-Time Engineering Projects</p>
+    </div>
+
+  </div>
+
+  <!-- Background Shapes -->
+  <div class="welcome-decor">
+    <div class="shape s1"></div>
+    <div class="shape s2"></div>
+  </div>
+</section>
+<!-- ========== NAV (hidden until Explore) ========== -->
+<nav class="nav-float hidden" aria-label="Primary">
+  <a href="#welcome" class="nav-logo" data-scroll>KB</a>
+  <div class="nav-links">
+    <a href="#intro" data-scroll>About</a>
+    <a href="#skills" data-scroll>Skills</a>
+    <a href="#works" data-scroll>Projects</a>
+    <a href="#contact" id="contactBtnNav">Contact</a>
+  </div>
+</nav>
+
+<!-- ========== INTRO (futuristic) ========== -->
+<main id="mainContent">
+  <section id="intro" class="page page--intro hidden">
+    <div class="intro-inner">
+
+      <!-- LEFT (PROFILE IMAGE) -->
+      <div class="profile-left">
+        <div class="profile-frame tilt">
+          <img id="profileImg" src="profile.jpeg" alt="Kesava Balaji">
+          <div class="photo-glow"></div>
+        </div>
+      </div>
+
+      <!-- RIGHT (INFO) -->
+      <div class="profile-right">
+        <h2 class="hi">Hello — I’m <span class="neon">Kesava Balaji</span></h2>
+
+        <!-- Typing Text -->
+        <h3 class="tagline">
+          <span id="typed"></span>
+        </h3>
+
+        <p class="bio">
+          I am an Electrical and Electronics Engineering graduate passionate about 
+          Electric Vehicles, Embedded Systems, and IoT. I focus on building 
+          real-world engineering solutions that are efficient, scalable, and innovative.
+        </p>
+
+        <ul class="info-list">
+          <li><strong>Course:</strong> B.Tech — Electrical & Electronics Engineering</li>
+          <li><strong>Location:</strong> Andhra Pradesh, India</li>
+          <li><strong>Email:</strong> 
+            <a href="mailto:kesavabalaji16@gmail.com">
+              kesavabalaji16@gmail.com
+            </a>
+          </li>
+        </ul>
+
+        <!-- SOCIAL LINKS -->
+        <div class="social-row">
+          <a class="social" href="https://linkedin.com/" target="_blank" title="LinkedIn">IN</a>
+          <a class="social" href="https://github.com/" target="_blank" title="GitHub">GH</a>
+          <a class="social" href="mailto:kesavabalaji16@gmail.com" title="Email">✉</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+<!-- ========== SKILLS (futuristic) ========== -->
+<section id="skills" class="page skills-section hidden">
+  <div class="container">
+    <h2 class="section-title">Skills & Expertise</h2>
+    <p class="section-sub">Engineering intelligent systems through innovation, electronics, and real-world problem solving.</p>
+
+    <div class="skills-grid">
+
+      <!-- EV & POWER -->
+      <div class="skill-card skill-radial">
+        <svg class="radial" viewBox="0 0 120 120" data-skill="88">
+          <circle cx="60" cy="60" r="48" class="bg"/>
+          <circle cx="60" cy="60" r="48" class="fg"/>
+        </svg>
+        <div>
+          <h3>Electric Vehicles & Power Systems</h3>
+          <p>Battery Management • Thermal Systems • Power Electronics</p>
+        </div>
+      </div>
+
+      <!-- EMBEDDED -->
+      <div class="skill-card skill-radial">
+        <svg class="radial" viewBox="0 0 120 120" data-skill="85">
+          <circle cx="60" cy="60" r="48" class="bg"/>
+          <circle cx="60" cy="60" r="48" class="fg"/>
+        </svg>
+        <div>
+          <h3>Embedded Systems</h3>
+          <p>Arduino • ESP8266 • ESP32 • Microcontrollers</p>
+        </div>
+      </div>
+
+      <!-- IOT -->
+      <div class="skill-card skill-radial">
+        <svg class="radial" viewBox="0 0 120 120" data-skill="82">
+          <circle cx="60" cy="60" r="48" class="bg"/>
+          <circle cx="60" cy="60" r="48" class="fg"/>
+        </svg>
+        <div>
+          <h3>IoT Systems</h3>
+          <p>Sensor Integration • Automation • Wireless Communication</p>
+        </div>
+      </div>
+
+      <!-- CORE ENGINEERING -->
+      <div class="skill-card skill-radial">
+        <svg class="radial" viewBox="0 0 120 120" data-skill="78">
+          <circle cx="60" cy="60" r="48" class="bg"/>
+          <circle cx="60" cy="60" r="48" class="fg"/>
+        </svg>
+        <div>
+          <h3>Core Engineering & Prototyping</h3>
+          <p>Circuit Design • Testing • Hardware Development</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section id="projects" class="page projects-section hidden">
+  <div class="container">
+
+    <h2 class="section-title">Projects</h2>
+    <p class="section-sub">
+      Real-world engineering solutions built with embedded systems, IoT, and EV technologies.
+    </p>
+
+    <div class="projects-grid">
+
+      <!-- PROJECT 1 -->
+      <div class="project-card">
+        <div class="project-img">
+          <img src="achivements/1.jpeg" alt="Agro Drone">
+        </div>
+        <div class="project-info">
+          <h3>Agro Drone</h3>
+          <p>Smart pesticide spraying drone using embedded systems.</p>
+          <div class="tech">
+            <span>Arduino</span>
+            <span>IoT</span>
+            <span>Sensors</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 2 -->
+      <div class="project-card">
+        <div class="project-img">
+          <img src="achivements/9.jpeg" alt="Ventilator">
+        </div>
+        <div class="project-info">
+          <h3>Low Cost Ventilator</h3>
+          <p>ESP-based ventilator with real-time SpO2 monitoring.</p>
+          <div class="tech">
+            <span>ESP32</span>
+            <span>IoT</span>
+            <span>Medical Sensors</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 3 -->
+      <div class="project-card">
+        <div class="project-img">
+          <img src="achivements/3.jpeg" alt="Battery Cooling">
+        </div>
+        <div class="project-info">
+          <h3>Battery Cooling System</h3>
+          <p>Thermal management system for EV batteries.</p>
+          <div class="tech">
+            <span>Microcontroller</span>
+            <span>Cooling System</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 4 -->
+      <div class="project-card">
+        <div class="project-img">
+          <img src="achivements/4.jpeg">
+        </div>
+        <div class="project-info">
+          
+          <h3>IoT RC Car</h3>
+          <p>Wireless IoT-enabled smart vehicle.</p>
+          <div class="tech">
+            <span>ESP8266</span>
+            <span>Wireless</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section id="experience" class="page exp-section hidden">
+  <div class="container">
+    <h2 class="section-title">Experience</h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <h3>Embedded Systems Project</h3>
+        <p>Worked on Arduino-based automation system with sensors integration.</p>
+        <span>2024</span>
+      </div>
+
+      <div class="timeline-item">
+        <h3>EV Battery Cooling System</h3>
+        <p>Designed thermal management system for EV battery safety.</p>
+        <span>2025</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="works" class="page works-section hidden">
+  <div class="container">
+
+    <header class="works-header">
+      <div>
+        <h2>Achievements</h2>
+        <p class="muted">
+          A showcase of my achievements, awards, and technical milestones.
+        </p>
+      </div>
+    </header>
+
+    <!-- 🔥 SLIDER -->
+    <div class="achievement-slider">
+
+      <button class="slide-btn prev">❮</button>
+
+      <div class="slider-track" id="sliderTrack">
+
+        <!-- CARD 1 -->
+        <div class="achievement-card">
+          <img src="achivements/1.jpeg" alt="Achievement 1">
+
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="achievement-card">
+          <img src="achivements/2.jpeg" alt="Achievement 2">
+          
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="achievement-card">
+          <img src="achivements/3.jpeg" alt="Achievement 3">
+         
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="achievement-card">
+          <img src="achivements/4.jpeg" alt="Achievement 4">
+
+        </div>
+
+        
+        <!-- CARD 1 -->
+        <div class="achievement-card">
+          <img src="achivements/5.jpeg" alt="Achievement 1">
+
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="achievement-card">
+          <img src="achivements/6.jpeg" alt="Achievement 2">
+          
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="achievement-card">
+          <img src="achivements/7.jpeg" alt="Achievement 3">
+         
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="achievement-card">
+          <img src="achivements/8.jpeg" alt="Achievement 4">
+
+        </div>
+
+        
+        <!-- CARD 1 -->
+        <div class="achievement-card">
+          <img src="achivements/9.jpeg" alt="Achievement 1">
+
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="achievement-card">
+          <img src="achivements/10.jpeg" alt="Achievement 2">
+          
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="achievement-card">
+          <img src="achivements/11.jpeg" alt="Achievement 3">
+         
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="achievement-card">
+          <img src="achivements/12.jpeg" alt="Achievement 4">
+
+        </div>
+
+        
+        <!-- CARD 1 -->
+        <div class="achievement-card">
+          <img src="achivements/13.jpeg" alt="Achievement 1">
+
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="achievement-card">
+          <img src="achivements/14.jpeg" alt="Achievement 2">
+          
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="achievement-card">
+          <img src="achivements/15.jpeg" alt="Achievement 3">
+         
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="achievement-card">
+          <img src="achivements/16.jpeg" alt="Achievement 4">
+
+        </div>
+
+        
+        <!-- CARD 1 -->
+        <div class="achievement-card">
+          <img src="achivements/17.jpeg" alt="Achievement 1">
+
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="achievement-card">
+          <img src="achivements/18.jpeg" alt="Achievement 2">
+          
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="achievement-card">
+          <img src="achivements/19.jpeg" alt="Achievement 3">
+         
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="achievement-card">
+          <img src="achivements/20.jpeg" alt="Achievement 4">
+
+        </div>
+
+        
+        <!-- CARD 1 -->
+        <div class="achievement-card">
+          <img src="achivements/21.jpeg" alt="Achievement 1">
+
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="achievement-card">
+          <img src="achivements/22.jpeg" alt="Achievement 2">
+          
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="achievement-card">
+          <img src="achivements/23.jpeg" alt="Achievement 3">
+         
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="achievement-card">
+          <img src="achivements/24.jpeg" alt="Achievement 4">
+
+        </div>
+
+        
+        <!-- CARD 1 -->
+        <div class="achievement-card">
+          <img src="achivements/25.jpeg" alt="Achievement 1">
+
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="achievement-card">
+          <img src="achivements/26.jpeg" alt="Achievement 2">
+          
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="achievement-card">
+          <img src="achivements/27.jpeg" alt="Achievement 3">
+         
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="achievement-card">
+          <img src="achivements/28.jpeg" alt="Achievement 4">
+
+        </div>
+
+      </div>
+
+      <button class="slide-btn next">❯</button>
+
+    </div>
+
+  </div>
+</section>
+
+
+      <!-- ========== CONTACT modal (hidden initially) ========== -->
+      <div id="contactModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+        <div class="modal-panel glass">
+          <button class="modal-close" id="closeModal" aria-label="Close contact">✕</button>
+          <h3 id="contactTitle">Contact — Send a Hologram</h3>
+          <p>Prefer short messages — I reply quickly.</p>
+          <form id="contactForm" class="contact-form">
+            <label><span>Name</span><input type="text" name="name" required></label>
+            <label><span>Email</span><input type="email" name="email" required></label>
+            <label><span>Message</span><textarea name="message" rows="4" required></textarea></label>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Send</button>
+              <button type="button" class="btn btn-ghost" id="modalCancel">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- ========== FOOTER ========== -->
+    <footer class="site-footer" class="page works-section hidden">
+      <section class="page projects-section hidden">
+  <div class="container footer-container">
+
+    <!-- LEFT -->
+    <div class="footer-col">
+      <h3 class="footer-logo">Kesava Balaji ⚡</h3>
+      <p>
+        Electrical & Electronics Engineer focused on EV systems, 
+        Embedded technologies, and IoT solutions.
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#intro">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#works">Achievements</a></li>
+        <li><a href="#projects">Projects</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>Email: <a href="mailto:kesavabalaji16@gmail.com">kesavabalaji16@gmail.com</a></p>
+      <p>Location: Andhra Pradesh, India</p>
+    </div>
+
+    <!-- SOCIAL -->
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <div class="footer-socials">
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+        <a href="#">Email</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <small>
+      © <span id="year"></span> Kesava Balaji — Built with ❤️ & Engineering
+    </small>
+  </div>
+</section>
+
+</footer>
+    </main>
+  </div>
+
+  <!-- Main script -->
+  <script src="script.js" defer></script>
+</body>
+</html>
